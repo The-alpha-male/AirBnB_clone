@@ -1,11 +1,5 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 """This script is the base model that defines all common attributes/methods for other classes"""
-"""I am testing SSH"""
-=======
-"""This script is the Base model that defines all common attributes/methods for other classes"""
-"""Test"""
->>>>>>> c38ded40b12a8d287d5763e16218b79b52bd267f
 
 import uuid
 from datetime import datetime
