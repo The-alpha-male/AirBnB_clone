@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This script is the base model that defines all common attributes/methods for other classes"""
+"""This script is the Base model that defines all common attributes/methods for other classes"""
 
 import uuid
 from datetime import datetime
