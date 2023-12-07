@@ -2,10 +2,10 @@
 """This script is the base model that defines all common
 attributes/methods for other classes"""
 
-import uuid
+
 from datetime import datetime
 import models
-
+import uuid
 class BaseModel:
 
     """This class is the base model that defines
