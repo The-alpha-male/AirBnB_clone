@@ -5,11 +5,18 @@ attributes/methods for other classes"""
 
 from datetime import datetime
 import models
+<<<<<<< HEAD
+
+
+class BaseModel:
+    """This class is the base model that defines all common attributes/methods for other classes."""
+=======
 import uuid
 class BaseModel:
 
     """This class is the base model that defines
     all common attributes/methods for other classes."""
+>>>>>>> 88a8cd190d980265ee5497b6e91a252ef1a4f8d2
 
     def __init__(self, *args, **kwargs):
         """This is the initialization method"""
