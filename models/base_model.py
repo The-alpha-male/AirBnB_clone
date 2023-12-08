@@ -5,8 +5,10 @@ import uuid
 from datetime import datetime
 import models
 
+
 class BaseModel:
     """This class is the base model that defines all common attributes/methods for other classes."""
+
     def __init__(self, *args, **kwargs):
         """This is the initialization method"""
         if kwargs:
