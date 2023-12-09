@@ -1,6 +1,6 @@
 # AirBnB_clone
 
-This an AirBnB clone. The AirBnB website operates an online marketplace for travel information and booking services. The website offers lodging, home-stay, and tourism services via websites and mobile applications. Airbnb serves clients worldwide.
+This an AirBnB clone. The AirBnB website operates an online marketplace for travel information and booking services. The website offers lodging, home-stay, and tourism services via websites and mobile applications
 
 ## Getting Started
 
