@@ -2,7 +2,7 @@
 
 """model class amenity
 """
-
+ls
 from models.base_model import BaseModel
 
 
