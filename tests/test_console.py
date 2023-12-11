@@ -42,9 +42,9 @@ class TestConsole(unittest.TestCase):
             self.console_o.onecmd('create State name="California"')
             self.assertTrue(len(f.getvalue()) > 0)
         with patch("sys.stdout", new=StringIO()) as f:
-            self.console_o.onecmd(
-                'create User email="airbnb@gmail.com" \ password="root"'
-            )
+            self.console.onecmd
+            (r'create User email="airbnb@gmail.com" password="root"')
+
             self.assertTrue(len(f.getvalue()) > 0)
         with patch("sys.stdout", new=StringIO()) as f:
             self.console_o.onecmd('create User email=" " password="root"')
@@ -251,7 +251,8 @@ class TestConsole(unittest.TestCase):
             self.assertTrue(len(f.getvalue()) > 0)
         with patch("sys.stdout", new=StringIO()) as f:
             self.console_o.onecmd(
-                "BaseModel.show(" + str(list(storage.all().values())[0].id) + ")"
+                "BaseModel.show(" + str
+                (list(storage.all().values())[0].id) + ")"
             )
             self.assertTrue(len(f.getvalue()) > 0)
         with patch("sys.stdout", new=StringIO()) as f:
@@ -270,17 +271,20 @@ class TestConsole(unittest.TestCase):
             self.assertEqual("** no instance found **\n", f.getvalue())
         with patch("sys.stdout", new=StringIO()) as f:
             self.console_o.onecmd(
-                "State.destroy(" + str(list(storage.all().values())[0].id) + ")"
+                "State.destroy(" + str
+                (list(storage.all().values())[0].id) + ")"
             )
             self.assertEqual("", f.getvalue())
         with patch("sys.stdout", new=StringIO()) as f:
             self.console_o.onecmd(
-                "BaseModel.destroy(" + str(list(storage.all().values())[0].id) + ")"
+                "BaseModel.destroy(" + str
+                (list(storage.all().values())[0].id) + ")"
             )
             self.assertEqual("", f.getvalue())
         with patch("sys.stdout", new=StringIO()) as f:
             self.console_o.onecmd(
-                "MyModel.destroy(" + str(list(storage.all().values())[0].id) + ")"
+                "MyModel.destroy(" + str
+                (list(storage.all().values())[0].id) + ")"
             )
             self.assertEqual("** class doesn't exist **\n", f.getvalue())
 
@@ -320,7 +324,8 @@ class TestConsole(unittest.TestCase):
             self.console_o.onecmd('create State name="California"')
             self.assertTrue(len(f.getvalue()) > 0)
         with patch("sys.stdout", new=StringIO()) as f:
-            self.console_o.onecmd('create State name="California" invalid="invalid"')
+            self.console_o.onecmd
+            ('create State name="California" invalid="invalid"')
             self.assertEqual("** unknown attribute **\n", f.getvalue())
 
     def test_show_missing_class(self):
