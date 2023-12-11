@@ -61,10 +61,12 @@ class TestCity_instantiation(unittest.TestCase):
         city = City(**kwargs)
         self.assertEqual(city.id, "f7f99")
         self.assertEqual(
-            city.created_at, datetime.strptime(kwargs["created_at"], time_format)
+            city.created_at, datetime.strptime
+            (kwargs["created_at"], time_format)
         )
         self.assertEqual(
-            city.updated_at, datetime.strptime(kwargs["updated_at"], time_format)
+            city.updated_at, datetime.strptime
+            (kwargs["updated_at"], time_format)
         )
         self.assertEqual(city.name, "San Francisco")
         self.assertEqual(city.state_id, "c7c99")
