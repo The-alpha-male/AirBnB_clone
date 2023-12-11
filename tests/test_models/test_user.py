@@ -27,7 +27,7 @@ class TestUser(unittest.TestCase):
     def test_init_args(self):
         """Test init with args"""
         data = {
-            'id': '123'
+            'id': '1234'
             'created_at': '2023-12-01T00:00:00',
             'updated_at': '2023-12-01T00:00:00',
             'name': 'Testing'
@@ -35,11 +35,11 @@ class TestUser(unittest.TestCase):
         self.user = User(**data)
 
         """Verify that attributes are set correctly"""
-        self.assertEqual(self.user.id, '123')
+        self.assertEqual(self.user.id, '1234')
         self.assertEqual(self.user.created_at,
-                         datetime.fromisoformat('2023-01-01T00:00:00'))
+                         datetime.fromisoformat('2023-12-01T00:00:00'))
         self.assertEqual(self.user.updated_at,
-                         datetime.fromisoformat('2023-01-01T00:00:00'))
+                         datetime.fromisoformat('2023-12-01T00:00:00'))
         self.assertEqual(self.user.name, 'Testing')
 
     def test_init_without_args(self):
@@ -57,8 +57,8 @@ class TestUser(unittest.TestCase):
         """Testing kwargs"""
         date = datetime.now()
         tform = date.isoformat()
-        usr = User(id='123', created_at=tform, updated_at=tform)
-        self.assertEqual(usr.id, '123')
+        usr = User(id='1234', created_at=tform, updated_at=tform)
+        self.assertEqual(usr.id, '1234')
         self.assertEqual(usr.created_at, date)
         self.assertEqual(usr.updated_at, date)
 
@@ -71,8 +71,8 @@ class TestUser(unittest.TestCase):
         """Test both args and kwargs"""
         date = datetime.datetime.now()
         tform = date.isoformat()
-        usr = User(id='123', created_at=tform.updated_at=tform)
-        self.assertEqual(usr.id, '123')
+        usr = User(id='1234', created_at=tform.updated_at=tform)
+        self.assertEqual(usr.id, '1234')
         self.assertEqual(usr.created_at, date)
         self.assertEqual(usr.updated_at, date)
 
