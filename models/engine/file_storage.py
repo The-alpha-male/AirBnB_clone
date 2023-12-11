@@ -37,7 +37,7 @@ class FileStorage:
                 new_dict = json.load(f)
             for key, value in new_dict.items():
                 FileStorage.__objects[key] = eval(value["__class__"])(**value)
-        except:
+        except FileNotFoundError:
             pass
 
     def delete(self, obj=None):
