@@ -201,9 +201,11 @@ class TestReview_to_dict(unittest.TestCase):
         self.assertEqual(str, type(review_dict["id"]))
         self.assertEqual(review.id, review_dict["id"])
         self.assertEqual(datetime, type(review_dict["created_at"]))
-        self.assertEqual(review.created_at.isoformat(), review_dict["created_at"])
+        self.assertEqual(review.created_at.isoformat(),
+                         review_dict["created_at"])
         self.assertEqual(datetime, type(review_dict["updated_at"]))
-        self.assertEqual(review.updated_at.isoformat(), review_dict["updated_at"])
+        self.assertEqual(review.updated_at.isoformat(),
+                         review_dict["updated_at"])
         self.assertEqual(str, type(review_dict["place_id"]))
         self.assertEqual(review.place_id, review_dict["place_id"])
         self.assertEqual(str, type(review_dict["user_id"]))
