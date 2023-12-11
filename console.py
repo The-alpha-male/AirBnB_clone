@@ -73,7 +73,8 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, line):
-        """Prints all string representation of all instances based or not on the
+        """Prints all string representation
+        of all instances based or not on the
         class name."""
         args = line.split()
         if not line:
@@ -137,7 +138,8 @@ class HBNBCommand(cmd.Cmd):
                 if len(args[1]) == 3:
                     args[1].append("")
                 self.do_update(
-                    args[0] + " " + args[1][0] + " " + args[1][1] + " " + args[1][2]
+                    args[0] + " " + args[1][0] + " " +
+                    args[1][1] + " " + args[1][2]
                 )
             else:
                 cmd.Cmd.default(self, line)
