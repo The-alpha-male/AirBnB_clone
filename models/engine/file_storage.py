@@ -87,4 +87,3 @@ class FileStorage:
             new_dict[key] = value.to_dict()
         with open(FileStorage.__file_path, "w") as f:
             json.dump(new_dict, f)
-
