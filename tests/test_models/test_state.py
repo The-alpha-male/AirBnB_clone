@@ -148,10 +148,10 @@ def test_init_without_arguments(self):
         """tests the effectivity of different timestamps updates"""
         st = State()
         sleep(0.1)
-        upadte1 = st.updated_at
+        update1 = st.updated_at
         st.save()
         update2 = st.updated_at
-        self.assertLess(upadte1, update2)
+        self.assertLess(update1, update2)
         sleep(0.1)
         st.save()
         self.assertLess(update2, st.updated_at)

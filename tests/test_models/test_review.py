@@ -9,7 +9,7 @@ from time import sleep
 import os
 
 
-class Test_Review(unitTesting.TestingCase):
+class Test_Review(unittest.TestingCase):
     """Testing casess for Review class"""
 
     def setUp(self):
@@ -147,10 +147,10 @@ class Test_Review(unitTesting.TestingCase):
         """Testings the effectivity of different timestamps updates"""
         rv = Review()
         sleep(0.1)
-        upadte1 = rv.updated_at
+        update1 = rv.updated_at
         rv.save()
         update2 = rv.updated_at
-        self.assertLess(upadte1, update2)
+        self.assertLess(update1, update2)
         sleep(0.1)
         rv.save()
         self.assertLess(update2, rv.updated_at)
