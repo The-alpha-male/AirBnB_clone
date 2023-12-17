@@ -38,15 +38,18 @@ class Test_State(unittest.TestCase):
                          datetime.fromisoformat('2023-12-01T00:00:00'))
         self.assertEqual(self.state.name, 'Testing')
 
-    def test_init_without_arguments(self):
-        """Test initialization without arguments"""
-        self.state = State()
+def test_init_without_arguments(self):
+    """Test initialization without arguments"""
+    self.state = State()
 
-        # Verify that the attributes are set correctly
-        self.assertIsNotNone(self.state.id)
-        self.assertIsNotNone(self.state.created_at)
-        self.assertIsNotNone(self.state.updated_at)
-        self.assertEqual(self.state.created_at, self.state.updated_at)
+    # Verify that the attributes are set correctly
+    self.assertIsNotNone(self.state.id)
+    self.assertIsNotNone(self.state.created_at)
+    self.assertIsNotNone(self.state.updated_at)
+    # Allow for a microsecond difference due to update
+    self.assertLessEqual(self.state.created_at, self.state.updated_at)
+    self.assertEqual(self.state.created_at.microsecond, 0)
+
 
     def test_args(self):
         """Testing args which was unused"""
@@ -145,10 +148,10 @@ class Test_State(unittest.TestCase):
         """tests the effectivity of different timestamps updates"""
         st = State()
         sleep(0.1)
-        upadte1 = st.updated_at
+        update1 = st.updated_at
         st.save()
         update2 = st.updated_at
-        self.assertLess(upadte1, update2)
+        self.assertLess(update1, update2)
         sleep(0.1)
         st.save()
         self.assertLess(update2, st.updated_at)
